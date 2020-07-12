@@ -1,0 +1,60 @@
+﻿@model MemberRegistration.MvcWebUI.Models.MemberAddViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="py-5 text-center">
+            <h2>Kayıt Formu</h2>
+            <p class="lead">Lütfen bilgilerinizi giriniz.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Bilgileriniz</h4>
+                @using (Html.BeginForm("Add", "Member", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">Adınız</label>
+                            <input type="text" class="form-control" id="firstName" name="member.firstName" placeholder="Adınız" value="">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName">Soyadınız</label>
+                            <input type="text" class="form-control" id="lastName" name="member.lastName" placeholder="Soyadınız" value="">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tcNo">TC Kimlik Numarası</label>
+                        <input type="text" class="form-control" id="tcNo" name="member.tcNo" placeholder="TC Kimlik Numarası">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="member.email" placeholder="you@example.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="dateOfBirth">Doğum Tarihi</label>
+                        <input type="text" class="form-control" id="dateOfBirth" name="member.dateOfBirth" placeholder="06/01/1990">
+                    </div>
+
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Hemen Kaydol</button>
+                    <hr class="mb-4">
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
