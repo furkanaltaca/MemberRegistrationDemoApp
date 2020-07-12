@@ -19,6 +19,8 @@ namespace MemberRegistration.Business.ValidationRules.FluentValidation
             RuleFor(x => x.Email).NotEmpty();
 
             RuleFor(x => x.DateOfBirth).LessThan(DateTime.Now);
+            RuleFor(x => x.Email).EmailAddress();
+            RuleFor(x => x.TcNo).Length(11);
 
         }
     }
